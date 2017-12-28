@@ -12,4 +12,4 @@ stefan.p/superwebapp:
 
   Exec:
     - echo "Starting Deployed App"
-    - python3.6 moonstate.py
+    - sudo python3.6 moonstate.py
