@@ -5,7 +5,7 @@ stefan.p/superwebapp:
     - '*'
 
   PreInstall:
-    - sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+    - sudo yum -y install https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-15.ius.centos7.noarch.rpm
     - sudo yum -y install python36u
     - sudo yum -y install python36u-pip
     - sudo pip3.6 install requests
