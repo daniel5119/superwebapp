@@ -11,4 +11,5 @@ stefan.p/superwebapp:
     - sudo pip3.6 install requests
 
   Exec:
+    - echo "Starting Deployed App"
     - python3.6 moonstate.py
