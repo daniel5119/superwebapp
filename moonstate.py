@@ -3,6 +3,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import requests
+import datetime
 
 # HTML to send to browser
 html = """<!DOCTYPE html>
@@ -35,7 +36,9 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         return
 
 def phase():
-  r = requests.get("http://api.usno.navy.mil/rstt/oneday?date=1/18/2017&coords=54.59,-5.93&tz=0").json()
+  datestr = datetime.date.today().strftime('%m/%d/%Y')
+  url = "http://api.usno.navy.mil/rstt/oneday?date=" + datestr + "&coords=54.59,-5.93&tz=0"
+  r = requests.get(url).json()
   if 'curphase' in r:
       mnph = r['curphase']
   else:
