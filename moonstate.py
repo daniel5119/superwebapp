@@ -13,7 +13,7 @@ html = """<!DOCTYPE html>
 <h3>Distelli App Pipeline Test</h3>
 <p>This App simply displays the state of the moon currently, based on a USNO API.</p>
 <p><strong>Moon State:</strong><br>
-The moon is a {0} moon.</p>
+The moon is a {0} moon on {1}.</p>
 </html>
 """
 
@@ -30,7 +30,7 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
         # Send message back to client
-        message = html.format(phase())
+        message = html.format(phase(), str(datetime.date.today()))
         # Write content as utf-8 data
         self.wfile.write(bytes(message, "utf8"))
         return
